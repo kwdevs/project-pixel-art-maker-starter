@@ -6,6 +6,7 @@ var canvasHeight = document.getElementById('inputHeight');
 var canvasWidth = document.getElementById('inputWidth');
 
 // When size is submitted by the user, call makeGrid()
+document.querySelector('input[type=submit]').addEventListener('click', makeGrid(canvasWidth, canvasHeight));
 
 function makeGrid(width, height) {
 
@@ -18,9 +19,8 @@ function makeGrid(width, height) {
 
 	//setup the table
 	for (i = 0; i <= tableHeight; i++) {
-		if (i === 0) {
+		
 			tableElement.insertAdjacentHTML('afterbegin', '<tr></tr>');
-		}
 
 	}
 }
