@@ -7,8 +7,20 @@ var canvasWidth = document.getElementById('inputWidth');
 
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid() {
+function makeGrid(width, height) {
 
-// Your code goes here!
+	//setup variables
 
+	var tableElement = document.getElementById('pixelCanvas');
+
+	var tableWidth = width.getAttribute('value');
+	var tableHeight = height.getAttribute('value');				
+
+	//setup the table
+	for (i = 0; i <= tableHeight; i++) {
+		if (i === 0) {
+			tableElement.insertAdjacentHTML('afterbegin', '<tr></tr>');
+		}
+
+	}
 }
