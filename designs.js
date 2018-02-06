@@ -3,7 +3,6 @@
 var gridWidth = document.getElementById('inputWidth');
 	gridHeight = document.getElementById('inputHeight');
 	gridSizeInput = [];
-	currentColor = '';
 
 // Define variable tableElement to hold table DOM element
 var tableElement = document.getElementById('pixelCanvas');
@@ -54,3 +53,16 @@ function makeGrid(height, width) {
 		canvasHTML.appendChild(tableRow);
 	}
 }
+
+
+//  Define variables for colorPicker feature.
+var colorElement = document.getElementById('colorPicker');
+var currentColor = document.getElementById('colorPicker').value;
+
+// Setup event listening for changes to user selected color and save them to currentColor.
+colorElement.addEventListener('input', function() {
+	currentColor = document.getElementById('colorPicker').value;
+});
+
+
+// document.getElementbyId(colorPciekr)
