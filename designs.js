@@ -30,20 +30,29 @@ sizeSubmitButton.addEventListener('click', function(event) {
 
 function makeGrid(height, width) {
 
-// Define variable tableRowHTML as a tr html string
-// Define tableColHTML as a td html string.
+// Define tableBody, used to attach tr and td to new element to be appended to
+// DOM
 // Define canvasHTML as value of #pixelCanvas selection to attach
 // rows and columns.
     var canvasHTML = document.getElementById('pixelCanvas');
+    	tableBody = document.createElement('tbody');
+    var	tableRow;
+    var	tableCol;
+
+// Make sure grid is clear
+	canvasHTML.innerHTML = '';
 
 //Attach a row then attach columns in a loop
 
 	for (row = 0; row < height; row++) {
-		canvasHTML.insertAdjacentHTML('afterbegin', '<tr></tr>');
+		tableRow = document.createElement('tr');
 		
 		for (col = 0; col < width; col++) {
-			var currentRow = document.getElementsByTagName('tr')[row];
-				currentRow.innerHTML = '<td></td>';
+			tableCol = document.createElement('td');
+			tableRow.appendChild(tableCol);
+			// var currentRow = document.getElementsByTagName('tr')[row];
+			// 	currentRow.innerHTML = '<td></td>';
 		}
+		canvasHTML.appendChild(tableRow);
 	}
 }
