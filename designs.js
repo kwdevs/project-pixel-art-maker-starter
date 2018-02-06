@@ -9,9 +9,13 @@ var tableElement = document.getElementById('pixelCanvas');
 
 // Define variable sizeSubmitButton to hold submit button in size form
 
-var sizeSubmitButton = document.getElementById('sizePicker'[type=submit]);
+var sizeSubmitButton = document.getElementById('sizePicker').elements['submitButton'];
 
-// Listen for form #sizePicker submit button to be clicked. When clicked, run function to update gridSizeInput array and call makeGrid function.
+// Listen for form sizeSubmitButton submit button to be clicked. When clicked, run function to update gridSizeInput array and call makeGrid function.
+
+sizeSubmitButton.addEventListener('click', function(event) {
+	event.preventDefault();
+}, true);
 
  
 // makeGrid accepts 2 parameters, heigh and width, derived from user input stored in gridSizeInput array.
