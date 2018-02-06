@@ -34,14 +34,16 @@ function makeGrid(height, width) {
 // Define tableColHTML as a td html string.
 // Define canvasHTML as value of #pixelCanvas selection to attach
 // rows and columns.
-var tableRowHTML = document.createElement('tr');
-    tableColHTML = document.createElement('td');
-    canvasHTML = document.getElementById('pixelCanvas');
+    var canvasHTML = document.getElementById('pixelCanvas');
 
 //Attach a row then attach columns in a loop
 
-	for (row = 0; row <= height; row++) {
+	for (row = 0; row < height; row++) {
 		canvasHTML.insertAdjacentHTML('afterbegin', '<tr></tr>');
+		
+		for (col = 0; col < width; col++) {
+			var currentRow = document.getElementsByTagName('tr')[row];
+				currentRow.innerHTML = '<td></td>';
+		}
 	}
-
 }
