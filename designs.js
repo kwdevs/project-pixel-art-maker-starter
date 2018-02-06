@@ -46,7 +46,6 @@ function makeGrid(height, width) {
 		
 		for (col = 0; col < width; col++) {
 			tableCol = document.createElement('td');
-			tableCol.className = 'toggleColor';
 			tableRow.appendChild(tableCol);
 		}
 		canvasHTML.appendChild(tableRow);
