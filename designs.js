@@ -1,7 +1,9 @@
-// Declare variable gridSizeInput as an array which stores user input of height and width. Declare currentColor to hold a string value.
+// Declare variable gridHeight and gridWidth which stores user input of height and width. Declare currentColor to hold a string value.
 
-var gridSizeInput = [];
-var currentColor = '';
+var gridWidth = document.getElementById('inputWidth');
+	gridHeight = document.getElementById('inputHeight');
+	gridSizeInput = [];
+	currentColor = '';
 
 // Define variable tableElement to hold table DOM element
 
@@ -15,6 +17,14 @@ var sizeSubmitButton = document.getElementById('sizePicker').elements['submitBut
 
 sizeSubmitButton.addEventListener('click', function(event) {
 	event.preventDefault();
+
+	// Store the value of grid size forum in gridSizeInput
+	gridSizeInput[0] = gridWidth.value;
+	console.log("gridSizeInput[0]", gridSizeInput[0]);
+	gridSizeInput[1] = gridHeight.value;
+	console.log("gridSizeInput[1]", gridSizeInput[1]);
+
+	
 }, true);
 
  
