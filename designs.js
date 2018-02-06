@@ -46,14 +46,12 @@ function makeGrid(height, width) {
 		
 		for (col = 0; col < width; col++) {
 			tableCol = document.createElement('td');
+			tableCol.className = 'toggleColor';
 			tableRow.appendChild(tableCol);
-			// var currentRow = document.getElementsByTagName('tr')[row];
-			// 	currentRow.innerHTML = '<td></td>';
 		}
 		canvasHTML.appendChild(tableRow);
 	}
 }
-
 
 //  Define variables for colorPicker feature.
 var colorElement = document.getElementById('colorPicker');
@@ -64,5 +62,12 @@ colorElement.addEventListener('input', function() {
 	currentColor = document.getElementById('colorPicker').value;
 });
 
+//  Setup event listening on tableElement and respond on bubbling event.target of click on td elements.
+tableElement.addEventListener('click', function(event){
+	if (event.target.nodeName.toLowerCase() === 'td') {
+		// check if colored or not with attribute
 
-// document.getElementbyId(colorPciekr)
+		// color the td that was clicked.
+		
+	}
+});
