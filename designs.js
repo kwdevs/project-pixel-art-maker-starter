@@ -19,12 +19,10 @@ sizeSubmitButton.addEventListener('click', function(event) {
 	event.preventDefault();
 
 	// Store the value of grid size forum in gridSizeInput
-	gridSizeInput[0] = gridWidth.value;
-	console.log("gridSizeInput[0]", gridSizeInput[0]);
+	gridSizeInput[0] = gridWidth.value;	
 	gridSizeInput[1] = gridHeight.value;
-	console.log("gridSizeInput[1]", gridSizeInput[1]);
 
-	
+	makeGrid(gridSizeInput[0], gridSizeInput[1]);
 }, true);
 
  
@@ -33,16 +31,17 @@ sizeSubmitButton.addEventListener('click', function(event) {
 function makeGrid(height, width) {
 
 // Define variable tableRowHTML as a tr html string
-
 // Define tableColHTML as a td html string.
+// Define canvasHTML as value of #pixelCanvas selection to attach
+// rows and columns.
+var tableRowHTML = document.createElement('tr');
+    tableColHTML = document.createElement('td');
+    canvasHTML = document.getElementById('pixelCanvas');
 
-// Define canvasHTML as value of #pixelCanvas selection.
+//Attach a row then attach columns in a loop
 
-// Check if creating first row
-
-// Create and attach gridSizeInput[0], rows value, to canvasHTML.
-// If first row, attach adjacent as first, else attach adjacent as
-// last element.
-
+	for (row = 0; row <= height; row++) {
+		canvasHTML.insertAdjacentHTML('afterbegin', '<tr></tr>');
+	}
 
 }
