@@ -63,16 +63,28 @@ colorElement.addEventListener('input', function() {
 
 //  Setup event listening on tableElement and respond on bubbling event.target of click on td elements.
 tableElement.addEventListener('click', function(event){
-	//variable to search for whether class exists for colored td
-	var cellCurrentColor = event.target.classList.contains('colored');
+	// variable to search for whether class exists for colored td
+	var cellCurrentColor = event.target.classList.contains('bgcolor');
 
 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === false) {
-		// color the td that was clicked.
-		var cellColorAttr = document.createAttribute('bgcolor');
-			
-			cellColorAttr.value = currentColor;
-
-
-	
+		//add class to toggle bgcolor.
+		event.target.setAttribute('bgcolor', currentColor);
 	}
+	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === true){
+		event.target.removeAttr('bgcolor');
+	}
+	return;
 });
+
+// var paintCell = function () {
+// 	var cellCurrentColor = event.target.classList.contains('bgcolor');
+
+// 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === false) {
+// 		//add class to toggle bgcolor.
+// 		event.target.setAttribute('bgcolor', currentColor);
+// 	}
+// 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === true){
+// 		event.target.removeAttr('bgcolor');
+// 	}
+// 	return;
+// }
