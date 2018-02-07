@@ -69,11 +69,11 @@ tableElement.addEventListener('click', function(event){
 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === false) {
 		//add class to toggle bgcolor.
 		event.target.setAttribute('bgcolor', currentColor);
+		cellCurrentColor = true;
 	}
 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === true){
-		event.target.removeAttr('bgcolor');
+		event.target.removeAttribute('bgcolor');
 	}
-	return;
 });
 
 // var paintCell = function () {
