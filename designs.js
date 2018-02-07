@@ -65,26 +65,9 @@ colorElement.addEventListener('input', function() {
 tableElement.addEventListener('click', function(event){
 	// variable to search for whether class exists for colored td
 	var cellCurrentColor = event.target.classList.contains('bgcolor');
-
+	
 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === false) {
 		//add class to toggle bgcolor.
 		event.target.setAttribute('bgcolor', currentColor);
-		cellCurrentColor = true;
-	}
-	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === true){
-		event.target.removeAttribute('bgcolor');
 	}
 });
-
-// var paintCell = function () {
-// 	var cellCurrentColor = event.target.classList.contains('bgcolor');
-
-// 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === false) {
-// 		//add class to toggle bgcolor.
-// 		event.target.setAttribute('bgcolor', currentColor);
-// 	}
-// 	if (event.target.nodeName.toLowerCase() === 'td' && cellCurrentColor === true){
-// 		event.target.removeAttr('bgcolor');
-// 	}
-// 	return;
-// }
